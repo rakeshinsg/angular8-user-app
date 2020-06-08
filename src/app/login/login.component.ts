@@ -49,12 +49,18 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        this.loading = true;
+        //this.loading = true;
         this.authenticationService.login(this.f.username.value, this.f.password.value)
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    if(data  == null) {
+                        this.router.navigate(['/login']);
+                        this.alertService.error("Invalid user id or password");                        
+                    }   else {
+                        this.router.navigate(['/home']);
+                    }                 
+                    
                 },
                 error => {
                     this.alertService.error(error);
