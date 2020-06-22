@@ -1,1 +1,15 @@
-﻿<h1>Need to add the logic to add the account</h1>
+﻿
+<div>
+    <h1>Please select appropriate option</h1>
+</div>
+
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/account-submission-component" routerLinkActive="active">Account Submission Screen</a></li>
+    <li><a routerLink="/approve-account-component" routerLinkActive="active">Account Approval Screen</a></li>
+    <li><a routerLink="/show-account-component" routerLinkActive="active">User Submitted Requests</a></li>
+  </ul>
+</nav>
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

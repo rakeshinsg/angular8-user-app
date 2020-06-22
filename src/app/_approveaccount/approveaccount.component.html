@@ -1,0 +1,26 @@
+﻿<div>
+    <h1>Approval Screen</h1>
+</div>
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Submitted Date</th>
+            <th>Submitted By</th>
+            <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accountList">
+          <td>{{ account.submittedDate | date :'dd-MMM-yy'}}</td>
+          <td>{{ account.submittedBy }}</td>
+          <td><button type="button" class="btn btn-sm" (click)="approve(account)">
+            <img src="/src/assets/img/approve1.png">
+          </button>
+          <button type="button" class="btn btn-xm" (click)="cancel(account)">
+            <img src="/src/assets/img/cancel.png">
+          </button></td>          
+        </tr>
+      </tbody>
+    </table>
+  </div>
